@@ -53,8 +53,8 @@ const OccupancyChart = ({ rooms }) => {
   }, [rooms]);
 
   return (
-    <div style={{ width: '100%', height: 300 }}>
-      <ResponsiveContainer>
+    <div style={{ width: '100%', height: 300, minWidth: 0 }}>
+      <ResponsiveContainer width="99%" height="99%">
         <PieChart>
           <Pie
             data={chartData}

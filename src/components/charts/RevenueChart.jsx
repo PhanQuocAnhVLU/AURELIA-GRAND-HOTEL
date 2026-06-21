@@ -30,8 +30,8 @@ const RevenueChart = ({ data }) => {
   }, [data]);
 
   return (
-    <div style={{ width: '100%', height: 400 }}>
-      <ResponsiveContainer>
+    <div style={{ width: '100%', height: 400, minWidth: 0 }}>
+      <ResponsiveContainer width="99%" height="99%">
         <BarChart
           data={chartData}
           margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
