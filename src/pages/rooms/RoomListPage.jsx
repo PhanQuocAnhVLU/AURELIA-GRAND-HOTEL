@@ -110,7 +110,12 @@ const RoomListPage = () => {
           <Col md={6} xl={4} key={room.id}>
             <Card className="hotel-card border-0 h-100 p-0 overflow-hidden">
               <div className="position-relative">
-                <img src={room.images[0]} alt={`Room ${room.number}`} className="room-card-img w-100" />
+                <img 
+                  src={room.images[0]} 
+                  alt={`Room ${room.number}`} 
+                  className="room-card-img w-100" 
+                  onError={(e) => { e.target.onerror = null; e.target.src = 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800'; }} 
+                />
                 <Badge 
                   bg={
                     room.status === 'Available' ? 'success' :

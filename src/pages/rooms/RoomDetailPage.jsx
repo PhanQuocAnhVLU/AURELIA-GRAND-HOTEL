@@ -95,7 +95,13 @@ const RoomDetailPage = () => {
       <Row className="g-4">
         <Col lg={8}>
           <Card className="hotel-card border-0 mb-4 p-0 overflow-hidden">
-            <img src={room.images[0]} alt={`Phòng ${room.number}`} className="w-100" style={{ height: '400px', objectFit: 'cover' }} />
+            <img 
+              src={room.images[0]} 
+              alt={`Phòng ${room.number}`} 
+              className="w-100" 
+              style={{ height: '400px', objectFit: 'cover' }} 
+              onError={(e) => { e.target.onerror = null; e.target.src = 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800'; }} 
+            />
           </Card>
 
           <Card className="hotel-card border-0 mb-4">
