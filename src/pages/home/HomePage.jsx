@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import { FaChevronLeft, FaChevronRight, FaSearch, FaCalendarAlt, FaUserFriends } from 'react-icons/fa';
 
 const heroImages = [
-  'https://images.unsplash.com/photo-1542314831-c6a4d14b8fc4?w=1920',
-  'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920',
-  'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1920',
-  'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=1920',
-  'https://images.unsplash.com/photo-1590490360182-c33d7b4c3ea0?w=1920',
+  '/slide1.jpg',
+  '/slide2.jpg',
+  '/slide3.jpg',
+  '/slide4.jpg',
+  '/slide5.jpg',
 ];
 
 const HomePage = () => {
@@ -234,9 +234,9 @@ const HomePage = () => {
 
           <Row className="g-4">
             {[
-              { name: 'Deluxe Room', desc: 'Phòng sang trọng với view thành phố', img: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600' },
-              { name: 'Executive Suite', desc: 'Suite cao cấp với phòng khách riêng biệt', img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600' },
-              { name: 'Presidential Suite', desc: 'Suite Tổng thống — đỉnh cao của sự xa hoa', img: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600' },
+              { name: 'Deluxe Room', desc: 'Phòng sang trọng với view thành phố', img: '/room1.jpg' },
+              { name: 'Executive Suite', desc: 'Suite cao cấp với phòng khách riêng biệt', img: '/room2.jpg' },
+              { name: 'Presidential Suite', desc: 'Suite Tổng thống — đỉnh cao của sự xa hoa', img: '/room3.jpg' },
             ].map((room, idx) => (
               <Col md={4} key={idx}>
                 <div
@@ -254,7 +254,7 @@ const HomePage = () => {
                       width: '100%', height: '100%', objectFit: 'cover',
                       transition: 'transform 0.6s ease',
                     }}
-                    onError={e => { e.target.onerror = null; e.target.src = 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800'; }}
+                    onError={e => { e.target.onerror = null; e.target.src = '/slide1.jpg'; }}
                   />
                   <div
                     className="room-overlay"
@@ -329,7 +329,7 @@ const HomePage = () => {
       {/* ====== CTA ====== */}
       <section style={{
         padding: '80px 0',
-        backgroundImage: `linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.7)), url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1920')`,
+        backgroundImage: `linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.75)), url('/cta-bg.jpg')`,
         backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed',
         textAlign: 'center', color: '#fff',
       }}>
