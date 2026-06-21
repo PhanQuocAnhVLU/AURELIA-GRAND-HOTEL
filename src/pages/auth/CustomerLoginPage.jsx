@@ -38,12 +38,18 @@ const CustomerLoginPage = () => {
   };
 
   return (
-    <Card className="hotel-card border-0 shadow-lg" style={{ maxWidth: '500px', width: '100%' }}>
+    <Card className="border-0 shadow-lg" style={{ 
+      maxWidth: '450px', 
+      width: '100%', 
+      backgroundColor: 'rgba(255, 255, 255, 0.92)', 
+      backdropFilter: 'blur(12px)',
+      borderRadius: 'var(--radius-lg)'
+    }}>
       <Card.Body className="p-4 p-md-5">
         <div className="text-center mb-4">
-          <FaBed className="text-gold mb-2" size={40} />
-          <h2 className="fw-bold">ĐĂNG NHẬP</h2>
-          <p className="text-muted">Hệ thống quản lý khách sạn 5 sao</p>
+          <FaBed className="text-gold mb-3" size={45} />
+          <h2 className="fw-bold mb-2" style={{ letterSpacing: '1px' }}>LUXURY HOTEL</h2>
+          <p className="text-muted small text-uppercase" style={{ letterSpacing: '2px' }}>Boutique Saigon</p>
         </div>
 
 
