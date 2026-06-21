@@ -158,3 +158,53 @@
   object-fit: cover;
   border: 3px solid var(--primary-color);
 }
+
+/* ============================
+   UTILITY
+   ============================ */
+.text-gold {
+  color: var(--primary-color) !important;
+}
+
+/* ============================
+   HOME PAGE / PUBLIC PAGES
+   ============================ */
+
+/* Navbar scroll effect */
+.public-navbar-scrolled {
+  background: rgba(11, 17, 32, 0.92) !important;
+  backdrop-filter: blur(16px) !important;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3) !important;
+}
+
+/* Slider dots */
+.slider-dot {
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+/* Room card overlay */
+.room-overlay {
+  transition: opacity 0.4s ease;
+}
+
+/* Service icon box */
+.service-icon-box {
+  transition: all 0.3s ease;
+}
+.service-icon-box:hover {
+  border-color: var(--primary-color) !important;
+  background: rgba(197,160,89,0.06) !important;
+}
+
+/* Date picker color fix */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+select option {
+  background: var(--secondary-color);
+  color: #fff;
+}
