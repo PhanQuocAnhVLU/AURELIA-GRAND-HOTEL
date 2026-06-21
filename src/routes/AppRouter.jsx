@@ -6,6 +6,10 @@ import { adminRoutes, managerRoutes, receptionistRoutes, customerRoutes } from '
 import AuthLayout from '../layouts/AuthLayout';
 import MainLayout from '../layouts/MainLayout';
 import CustomerLayout from '../layouts/CustomerLayout';
+import PublicLayout from '../layouts/PublicLayout';
+
+// Public Pages
+import HomePage from '../pages/home/HomePage';
 
 // Auth Pages
 import CustomerLoginPage from '../pages/auth/CustomerLoginPage';
@@ -46,6 +50,10 @@ const AppRouter = () => {
   return (
     <Routes>
       {/* Public Routes */}
+      <Route element={<PublicLayout />}>
+        <Route path="/" element={<HomePage />} />
+      </Route>
+
       <Route element={<AuthLayout />}>
         <Route path="/login" element={isAuthenticated ? <Navigate to="/dashboard" /> : <CustomerLoginPage />} />
         <Route path="/staff/login" element={isAuthenticated ? <Navigate to="/dashboard" /> : <StaffLoginPage />} />
@@ -60,8 +68,6 @@ const AppRouter = () => {
           </ProtectedRoute>
         }
       >
-        <Route path="/" element={<Navigate to="/dashboard" replace />} />
-        
         {/* Render role-specific routes dynamically */}
         {roleRoutes.map((route, index) => (
           <Route 
