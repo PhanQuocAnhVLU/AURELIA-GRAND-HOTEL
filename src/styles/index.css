@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 @import './variables.css';
 @import './components.css';
 
@@ -17,9 +17,10 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   color: var(--secondary-color);
   font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 [data-theme="dark"] h1, 
@@ -64,15 +65,16 @@ a:hover {
 .hotel-card {
   background-color: var(--bg-card);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   padding: 1.5rem;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgba(197, 160, 89, 0.1); /* Subtle gold border */
   transition: var(--transition-normal);
 }
 
 .hotel-card:hover {
   box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  border-color: rgba(197, 160, 89, 0.3);
 }
 
 [data-theme="dark"] .hotel-card {
