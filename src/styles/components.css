@@ -1,19 +1,22 @@
 /* Buttons */
 .btn-gold {
-  background-color: var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
   color: #fff;
   border: none;
   border-radius: var(--radius-sm);
-  padding: 0.5rem 1.5rem;
-  font-weight: 500;
-  transition: var(--transition-fast);
+  padding: 0.6rem 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
 }
 
 .btn-gold:hover {
-  background-color: var(--primary-dark);
+  background: linear-gradient(135deg, #E5C354 0%, var(--primary-color) 100%);
   color: #fff;
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
 }
 
 .btn-outline-gold {
@@ -21,14 +24,17 @@
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
   border-radius: var(--radius-sm);
-  padding: 0.5rem 1.5rem;
-  font-weight: 500;
-  transition: var(--transition-fast);
+  padding: 0.6rem 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
 }
 
 .btn-outline-gold:hover {
-  background-color: var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
   color: #fff;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
 }
 
 /* Badges */
@@ -119,9 +125,14 @@
 
 /* Room Cards */
 .room-card-img {
-  height: 200px;
+  height: 250px;
   object-fit: cover;
-  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  transition: transform 0.5s ease;
+}
+
+.hotel-card:hover .room-card-img {
+  transform: scale(1.05);
 }
 
 .price-tag {

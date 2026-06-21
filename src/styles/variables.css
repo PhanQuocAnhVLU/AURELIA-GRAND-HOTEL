@@ -1,20 +1,20 @@
 :root {
   /* Colors - Premium Hotel Palette */
-  --primary-color: #b5a642;      /* Gold/Brass */
-  --primary-dark: #8c7f33;
-  --secondary-color: #1a2b4c;    /* Deep Navy */
-  --accent-color: #d4af37;       /* Metallic Gold */
+  --primary-color: #D4AF37;      /* Metallic Gold */
+  --primary-dark: #B5952F;
+  --secondary-color: #0A192F;    /* Deep Navy */
+  --accent-color: #F8E5A0;       /* Light Gold Accent */
   
   /* Backgrounds */
-  --bg-main: #f8f9fa;
-  --bg-card: #ffffff;
-  --bg-dark: #121620;
-  --bg-dark-card: #1e2532;
+  --bg-main: #F8F9FA;
+  --bg-card: #FFFFFF;
+  --bg-dark: #07101E;
+  --bg-dark-card: #112240;
   
   /* Text */
-  --text-main: #2c3e50;
-  --text-muted: #6c757d;
-  --text-light: #f8f9fa;
+  --text-main: #232B38;
+  --text-muted: #8892B0;
+  --text-light: #F8F9FA;
   
   /* Status Colors */
   --success: #198754;
@@ -27,13 +27,13 @@
   --navbar-height: 70px;
   
   /* Shadows & Radius */
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
-  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 20px;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
   
   /* Transitions */
   --transition-fast: 0.2s ease;

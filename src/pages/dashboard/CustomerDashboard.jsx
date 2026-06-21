@@ -106,7 +106,13 @@ const CustomerDashboard = () => {
               <Col md={6} lg={4} key={booking.id}>
                 <Card className="hotel-card border-0 h-100 p-0 overflow-hidden">
                   <div style={{ height: '160px', overflow: 'hidden', position: 'relative' }}>
-                    <img src={room?.images[0]} alt={room?.type} className="w-100 h-100" style={{ objectFit: 'cover' }} />
+                    <img 
+                      src={room?.images[0]} 
+                      alt={room?.type} 
+                      className="w-100 h-100" 
+                      style={{ objectFit: 'cover' }} 
+                      onError={(e) => { e.target.onerror = null; e.target.src = 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800'; }}
+                    />
                     <Badge bg={booking.status === 'Confirmed' ? 'primary' : 'warning'} className="position-absolute top-0 end-0 m-3 fs-6">
                       {booking.status}
                     </Badge>

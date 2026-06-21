@@ -22,19 +22,41 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  const login = (email, password) => {
-    // Check employees (admin, manager, receptionist, staff)
-    const allUsers = [...employeesData, ...customersData];
-
-    // Also check localStorage for newly registered users
+  const loginCustomer = (email, password) => {
+    // Only check customersData and localStorage
     let lsCustomers = [];
     try {
       lsCustomers = JSON.parse(localStorage.getItem('hotel_customers') || '[]');
     } catch (e) {}
 
-    const allWithLS = [...allUsers, ...lsCustomers];
+    const allCustomers = [...customersData, ...lsCustomers];
     const emailToMatch = email.trim().toLowerCase();
-    const found = allWithLS.find(
+    const found = allCustomers.find(
+      (u) => u.email.trim().toLowerCase() === emailToMatch && u.password === password
+    );
+
+    if (found) {
+      const userData = {
+        id: found.id,
+        name: found.name,
+        email: found.email,
+        role: 'customer',
+        avatar: found.avatar,
+        phone: found.phone,
+        tier: found.tier || null,
+      };
+      setUser(userData);
+      localStorage.setItem('hotel_current_user', JSON.stringify(userData));
+      return { success: true, user: userData };
+    }
+
+    return { success: false, error: 'Email hoặc mật khẩu không đúng' };
+  };
+
+  const loginStaff = (email, password) => {
+    // Only check employeesData
+    const emailToMatch = email.trim().toLowerCase();
+    const found = employeesData.find(
       (u) => u.email.trim().toLowerCase() === emailToMatch && u.password === password
     );
 
@@ -46,7 +68,6 @@ export const AuthProvider = ({ children }) => {
         role: found.role,
         avatar: found.avatar,
         phone: found.phone,
-        tier: found.tier || null,
         department: found.department || null,
         position: found.position || null,
       };
@@ -55,7 +76,7 @@ export const AuthProvider = ({ children }) => {
       return { success: true, user: userData };
     }
 
-    return { success: false, error: 'Email hoặc mật khẩu không đúng' };
+    return { success: false, error: 'Email hoặc mật khẩu không đúng hoặc bạn không có quyền truy cập.' };
   };
 
   const logout = () => {
@@ -129,7 +150,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ user, isAuthenticated: !!user, loading, login, logout, register, updateProfile, hasRole }}
+      value={{ user, isAuthenticated: !!user, loading, loginCustomer, loginStaff, logout, register, updateProfile, hasRole }}
     >
       {children}
     </AuthContext.Provider>

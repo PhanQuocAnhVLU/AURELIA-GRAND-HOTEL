@@ -54,7 +54,13 @@ const ServiceListPage = () => {
           <Col md={6} xl={4} key={service.id}>
             <Card className="hotel-card border-0 h-100 p-0 overflow-hidden">
               <div style={{ height: '200px', overflow: 'hidden' }}>
-                <img src={service.image} alt={service.name} className="w-100 h-100" style={{ objectFit: 'cover' }} />
+                <img 
+                  src={service.image} 
+                  alt={service.name} 
+                  className="w-100 h-100" 
+                  style={{ objectFit: 'cover' }} 
+                  onError={(e) => { e.target.onerror = null; e.target.src = 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800'; }}
+                />
               </div>
               <Card.Body className="d-flex flex-column">
                 <div className="d-flex justify-content-between align-items-start mb-3">

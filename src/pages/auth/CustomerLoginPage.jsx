@@ -4,38 +4,15 @@ import { Form, Button, Alert, Card, InputGroup } from 'react-bootstrap';
 import { FaEnvelope, FaLock, FaBed, FaUserShield, FaUserTie, FaUser } from 'react-icons/fa';
 import { useAuth } from '../../contexts/AuthContext';
 
-const LoginPage = () => {
+const CustomerLoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('customer'); // Default role tab
+
+
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const { login } = useAuth();
+  const { loginCustomer } = useAuth();
   const navigate = useNavigate();
-
-  const handleQuickFill = (testRole) => {
-    setRole(testRole);
-    switch (testRole) {
-      case 'admin':
-        setEmail('admin@luxuryhotel.vn');
-        setPassword('admin123');
-        break;
-      case 'manager':
-        setEmail('manager@luxuryhotel.vn');
-        setPassword('manager123');
-        break;
-      case 'receptionist':
-        setEmail('receptionist@luxuryhotel.vn');
-        setPassword('reception123');
-        break;
-      case 'customer':
-        setEmail('nguyenvanan@email.com');
-        setPassword('customer123');
-        break;
-      default:
-        break;
-    }
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,7 +23,7 @@ const LoginPage = () => {
       // Simulate network delay
       await new Promise(resolve => setTimeout(resolve, 800));
       
-      const result = login(email, password);
+      const result = loginCustomer(email, password);
       
       if (result.success) {
         navigate('/dashboard');
@@ -69,39 +46,7 @@ const LoginPage = () => {
           <p className="text-muted">Hệ thống quản lý khách sạn 5 sao</p>
         </div>
 
-        {/* Role Tabs for Testing */}
-        <div className="d-flex justify-content-center mb-4 gap-2 flex-wrap">
-          <Button 
-            variant={role === 'customer' ? 'gold' : 'outline-secondary'} 
-            size="sm" 
-            onClick={() => handleQuickFill('customer')}
-            className={role === 'customer' ? 'btn-gold' : ''}
-          >
-            <FaUser className="me-1" /> Khách hàng
-          </Button>
-          <Button 
-            variant={role === 'receptionist' ? 'navy' : 'outline-secondary'} 
-            size="sm" 
-            onClick={() => handleQuickFill('receptionist')}
-            className={role === 'receptionist' ? 'bg-navy border-0' : ''}
-          >
-            Lễ tân
-          </Button>
-          <Button 
-            variant={role === 'manager' ? 'primary' : 'outline-secondary'} 
-            size="sm" 
-            onClick={() => handleQuickFill('manager')}
-          >
-            <FaUserTie className="me-1" /> Quản lý
-          </Button>
-          <Button 
-            variant={role === 'admin' ? 'danger' : 'outline-secondary'} 
-            size="sm" 
-            onClick={() => handleQuickFill('admin')}
-          >
-            <FaUserShield className="me-1" /> Admin
-          </Button>
-        </div>
+
 
         {error && <Alert variant="danger">{error}</Alert>}
 
@@ -162,4 +107,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default CustomerLoginPage;

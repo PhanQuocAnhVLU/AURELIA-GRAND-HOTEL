@@ -8,7 +8,8 @@ import MainLayout from '../layouts/MainLayout';
 import CustomerLayout from '../layouts/CustomerLayout';
 
 // Auth Pages
-import LoginPage from '../pages/auth/LoginPage';
+import CustomerLoginPage from '../pages/auth/CustomerLoginPage';
+import StaffLoginPage from '../pages/auth/StaffLoginPage';
 import RegisterPage from '../pages/auth/RegisterPage';
 
 const ProtectedRoute = ({ children, allowedRoles }) => {
@@ -46,7 +47,8 @@ const AppRouter = () => {
     <Routes>
       {/* Public Routes */}
       <Route element={<AuthLayout />}>
-        <Route path="/login" element={isAuthenticated ? <Navigate to="/dashboard" /> : <LoginPage />} />
+        <Route path="/login" element={isAuthenticated ? <Navigate to="/dashboard" /> : <CustomerLoginPage />} />
+        <Route path="/staff/login" element={isAuthenticated ? <Navigate to="/dashboard" /> : <StaffLoginPage />} />
         <Route path="/register" element={isAuthenticated ? <Navigate to="/dashboard" /> : <RegisterPage />} />
       </Route>
 
