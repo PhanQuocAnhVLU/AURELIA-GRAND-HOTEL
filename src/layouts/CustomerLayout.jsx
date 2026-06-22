@@ -65,7 +65,7 @@ const CustomerLayout = () => {
       {/* Footer */}
       <footer className="bg-dark text-white py-4 mt-auto">
         <Container className="text-center">
-          <p className="mb-0 text-muted">&copy; 2026 Luxury Hotel System. All rights reserved.</p>
+          <p className="mb-0 text-muted">&copy; 2026 AURELIA GRAND HOTEL System. All rights reserved.</p>
         </Container>
       </footer>
     </div>

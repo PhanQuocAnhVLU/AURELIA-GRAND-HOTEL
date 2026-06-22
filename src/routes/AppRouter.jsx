@@ -10,6 +10,10 @@ import PublicLayout from '../layouts/PublicLayout';
 
 // Public Pages
 import HomePage from '../pages/home/HomePage';
+import AccommodationsPage from '../pages/public/AccommodationsPage';
+import DiningPage from '../pages/public/DiningPage';
+import ServicesPage from '../pages/public/ServicesPage';
+import OffersPage from '../pages/public/OffersPage';
 
 // Auth Pages
 import CustomerLoginPage from '../pages/auth/CustomerLoginPage';
@@ -52,6 +56,10 @@ const AppRouter = () => {
       {/* Public Routes */}
       <Route element={<PublicLayout />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/cho-o" element={<AccommodationsPage />} />
+        <Route path="/am-thuc" element={<DiningPage />} />
+        <Route path="/dich-vu-spa" element={<ServicesPage />} />
+        <Route path="/uu-dai" element={<OffersPage />} />
       </Route>
 
       <Route element={<AuthLayout />}>

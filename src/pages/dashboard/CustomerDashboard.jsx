@@ -37,7 +37,7 @@ const CustomerDashboard = () => {
           <Row className="align-items-center">
             <Col md={8}>
               <h2 className="fw-bold mb-3 text-white" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Xin chào, {user?.name}!</h2>
-              <p className="lead mb-4 text-white-50">Chào mừng bạn trở lại với Luxury Hotel. Chúng tôi rất hân hạnh được phục vụ bạn.</p>
+              <p className="lead mb-4 text-white-50">Chào mừng bạn trở lại với AURELIA GRAND HOTEL. Chúng tôi rất hân hạnh được phục vụ bạn.</p>
               <div className="d-flex flex-wrap gap-3">
                 <Button as={Link} to="/rooms" variant="gold" className="btn-gold px-4 py-2">
                   <FaCalendarAlt className="me-2" /> Đặt phòng ngay

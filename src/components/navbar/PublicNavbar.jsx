@@ -37,9 +37,9 @@ const PublicNavbar = () => {
       <Container>
         <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
           <div className="text-white" style={{ fontFamily: "'Cormorant Garamond', serif", letterSpacing: '1px' }}>
-            <span style={{ fontSize: '1.8rem', fontWeight: '700' }}>LUXURY</span>
-            <span style={{ fontSize: '1.8rem', fontWeight: '400', color: 'var(--primary-color)' }}>HOTEL</span>
-            <div style={{ fontSize: '0.7rem', letterSpacing: '3px', color: '#ccc', textTransform: 'uppercase', marginTop: '-5px' }}>Boutique Saigon</div>
+            <span style={{ fontSize: '1.7rem', fontWeight: '700' }}>AURELIA</span>
+            <span style={{ fontSize: '1.7rem', fontWeight: '400', color: 'var(--primary-color)' }}> GRAND</span>
+            <div style={{ fontSize: '0.65rem', letterSpacing: '3px', color: '#ccc', textTransform: 'uppercase', marginTop: '-4px' }}>Hotel &amp; Resort · Saigon</div>
           </div>
         </Navbar.Brand>
         
@@ -49,10 +49,10 @@ const PublicNavbar = () => {
         
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', letterSpacing: '1px' }}>
-            <Nav.Link as={Link} to="/rooms" className="text-white mx-3 px-0 position-relative nav-hover-underline">CHỖ Ở</Nav.Link>
-            <Nav.Link href="#dining" className="text-white mx-3 px-0 position-relative nav-hover-underline">ẨM THỰC</Nav.Link>
-            <Nav.Link as={Link} to="/services" className="text-white mx-3 px-0 position-relative nav-hover-underline">DỊCH VỤ & SPA</Nav.Link>
-            <Nav.Link href="#offers" className="text-white mx-3 px-0 position-relative nav-hover-underline">ƯU ĐÃI</Nav.Link>
+            <Nav.Link as={Link} to="/cho-o" className="text-white mx-3 px-0 position-relative nav-hover-underline">CHỖ Ở</Nav.Link>
+            <Nav.Link as={Link} to="/am-thuc" className="text-white mx-3 px-0 position-relative nav-hover-underline">ẨM THỰC</Nav.Link>
+            <Nav.Link as={Link} to="/dich-vu-spa" className="text-white mx-3 px-0 position-relative nav-hover-underline">DỊCH VỤ &amp; SPA</Nav.Link>
+            <Nav.Link as={Link} to="/uu-dai" className="text-white mx-3 px-0 position-relative nav-hover-underline">ƯU ĐÃI</Nav.Link>
           </Nav>
           
           <div className="d-flex align-items-center mt-3 mt-lg-0">
@@ -84,7 +84,7 @@ const PublicNavbar = () => {
             
             <Button 
               as={Link} 
-              to="/rooms" 
+              to="/cho-o" 
               variant="gold" 
               className="btn-gold rounded-0 px-4 py-2"
               style={{ letterSpacing: '1px', fontSize: '0.9rem' }}

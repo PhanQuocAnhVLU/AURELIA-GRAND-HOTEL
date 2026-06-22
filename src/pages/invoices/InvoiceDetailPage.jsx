@@ -49,7 +49,7 @@ const InvoiceDetailPage = () => {
               <h2 className="fw-bold text-navy mb-1">LUXURY<span className="text-gold">HOTEL</span></h2>
               <p className="text-muted mb-0">123 Nguyễn Huệ, Quận 1, TP.HCM</p>
               <p className="text-muted mb-0">Hotline: +84 123 456 789</p>
-              <p className="text-muted mb-0">Email: contact@luxuryhotel.vn</p>
+              <p className="text-muted mb-0">Email: info@aureliagrand.vn</p>
             </div>
             <div className="text-end">
               <h1 className="fw-bold text-gold mb-3">HÓA ĐƠN</h1>
@@ -153,7 +153,7 @@ const InvoiceDetailPage = () => {
 
           {/* Footer */}
           <div className="text-center mt-5 pt-4 border-top text-muted">
-            <p className="mb-1">Cảm ơn quý khách đã sử dụng dịch vụ của Luxury Hotel!</p>
+            <p className="mb-1">Cảm ơn quý khách đã sử dụng dịch vụ của AURELIA GRAND HOTEL!</p>
             <p className="small mb-0">Hóa đơn này có giá trị xác nhận dịch vụ. Mọi thắc mắc xin liên hệ Lễ tân.</p>
           </div>
         </Card.Body>

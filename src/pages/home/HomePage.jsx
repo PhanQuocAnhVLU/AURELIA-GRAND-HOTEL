@@ -203,11 +203,11 @@ const HomePage = () => {
               color: 'var(--secondary-color)',
               marginBottom: '1.5rem',
             }}>
-              LUXURY HOTEL Boutique Saigon
+              AURELIA GRAND HOTEL Boutique Saigon
             </h2>
             <div style={{ width: '60px', height: '2px', background: 'var(--primary-color)', margin: '0 auto 2rem' }} />
             <p className="text-muted" style={{ fontSize: '1.05rem', lineHeight: 1.9 }}>
-              Tọa lạc tại trung tâm Quận 1, Luxury Hotel Boutique Saigon mang đến trải nghiệm lưu trú đẳng cấp
+              Tọa lạc tại trung tâm Quận 1, AURELIA GRAND HOTEL Boutique Saigon mang đến trải nghiệm lưu trú đẳng cấp
               với sự kết hợp tinh tế giữa phong cách cổ điển châu Âu và sự hiện đại. Mỗi chi tiết đều được
               chăm chút tỉ mỉ, từ nội thất sang trọng đến dịch vụ hoàn hảo, tạo nên không gian nghỉ dưỡng
               lý tưởng cho những vị khách sành điệu nhất.
@@ -386,7 +386,7 @@ const HomePage = () => {
               <h6 className="text-white fw-bold mb-3 text-uppercase" style={{ letterSpacing: '1px', fontSize: '0.85rem' }}>Liên hệ</h6>
               <p className="mb-1" style={{ fontSize: '0.85rem' }}>📍 123 Nguyễn Huệ, Quận 1, TP.HCM</p>
               <p className="mb-1" style={{ fontSize: '0.85rem' }}>📞 +84 28 1234 5678</p>
-              <p className="mb-1" style={{ fontSize: '0.85rem' }}>✉️ info@luxuryhotel.vn</p>
+              <p className="mb-1" style={{ fontSize: '0.85rem' }}>✉️ info@aureliagrand.vn</p>
             </Col>
             <Col md={4}>
               <h6 className="text-white fw-bold mb-3 text-uppercase" style={{ letterSpacing: '1px', fontSize: '0.85rem' }}>Liên kết nhanh</h6>
@@ -399,7 +399,7 @@ const HomePage = () => {
           </Row>
           <hr style={{ borderColor: 'rgba(255,255,255,0.08)', margin: '2rem 0 1.5rem' }} />
           <p className="text-center mb-0" style={{ fontSize: '0.8rem' }}>
-            © 2026 Luxury Hotel Boutique Saigon. All rights reserved.
+            © 2026 AURELIA GRAND HOTEL Boutique Saigon. All rights reserved.
           </p>
         </Container>
       </footer>

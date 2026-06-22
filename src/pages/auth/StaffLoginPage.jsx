@@ -56,7 +56,7 @@ const StaffLoginPage = () => {
                 </InputGroup.Text>
                 <Form.Control 
                   type="email" 
-                  placeholder="name@luxuryhotel.vn" 
+                  placeholder="name@aureliagrand.vn" 
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required

@@ -48,7 +48,7 @@ const CustomerLoginPage = () => {
       <Card.Body className="p-4 p-md-5">
         <div className="text-center mb-4">
           <FaBed className="text-gold mb-3" size={45} />
-          <h2 className="fw-bold mb-2" style={{ letterSpacing: '1px' }}>LUXURY HOTEL</h2>
+          <h2 className="fw-bold mb-2" style={{ letterSpacing: '1px' }}>AURELIA GRAND HOTEL</h2>
           <p className="text-muted small text-uppercase" style={{ letterSpacing: '2px' }}>Boutique Saigon</p>
         </div>
 
