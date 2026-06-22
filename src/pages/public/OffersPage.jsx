@@ -201,7 +201,7 @@ const OffersPage = () => {
                   <FaCalendarAlt style={{ color: '#C5A059', marginRight: '6px' }} />
                   Có hiệu lực đến: <strong style={{ color: '#ccc' }}>{offers[0].validity}</strong>
                 </span>
-                <Link to="/bookings" style={{
+                <Link to="/login" style={{
                   background: 'linear-gradient(135deg, #C5A059, #A07840)',
                   color: '#fff', padding: '13px 36px', textDecoration: 'none',
                   fontWeight: 700, fontSize: '0.85rem', letterSpacing: '1.5px',
@@ -298,7 +298,7 @@ const OffersPage = () => {
                       )}
                       <div style={{ color: '#C5A059', fontWeight: 700, fontSize: '1rem' }}>{offer.salePrice}</div>
                     </div>
-                    <Link to="/bookings" style={{
+                    <Link to="/login" style={{
                       background: hovered === offer.id ? 'linear-gradient(135deg, #C5A059, #A07840)' : 'transparent',
                       border: '1px solid rgba(197,160,89,0.4)',
                       color: hovered === offer.id ? '#fff' : '#C5A059',
@@ -342,7 +342,9 @@ const OffersPage = () => {
                 borderRadius: '2px 0 0 2px', outline: 'none',
               }}
             />
-            <button style={{
+            <button 
+              onClick={() => alert('Cảm ơn bạn đã đăng ký! Chúng tôi sẽ gửi những ưu đãi mới nhất qua email.')}
+              style={{
               background: 'linear-gradient(135deg, #C5A059, #A07840)',
               border: 'none', color: '#fff',
               padding: '14px 28px', fontWeight: 700,

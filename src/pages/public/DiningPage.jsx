@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FaClock, FaPhone, FaStar, FaLeaf, FaWineGlassAlt, FaUtensils } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const venues = [
   {
@@ -63,7 +64,7 @@ const venues = [
 
 const DiningPage = () => {
   const [hovered, setHovered] = useState(null);
-  const [activeVenue, setActiveVenue] = useState(null);
+  const navigate = useNavigate();
 
   return (
     <div style={{ background: '#0B1120', minHeight: '100vh', paddingBottom: '80px' }}>
@@ -186,19 +187,23 @@ const DiningPage = () => {
                 </div>
 
                 <div style={{ marginTop: '28px', display: 'flex', gap: '12px' }}>
-                  <button style={{
-                    background: 'linear-gradient(135deg, #C5A059, #A07840)',
-                    border: 'none', color: '#fff', padding: '12px 28px',
-                    fontWeight: 700, fontSize: '0.82rem', letterSpacing: '1.5px',
-                    textTransform: 'uppercase', borderRadius: '2px', cursor: 'pointer',
+                  <button 
+                    onClick={() => navigate('/login')}
+                    style={{
+                      background: 'linear-gradient(135deg, #C5A059, #A07840)',
+                      border: 'none', color: '#fff', padding: '12px 28px',
+                      fontWeight: 700, fontSize: '0.82rem', letterSpacing: '1.5px',
+                      textTransform: 'uppercase', borderRadius: '2px', cursor: 'pointer',
                   }}>
                     Đặt Bàn
                   </button>
-                  <button style={{
-                    background: 'transparent', border: '1px solid rgba(197,160,89,0.4)',
-                    color: '#C5A059', padding: '12px 28px',
-                    fontWeight: 600, fontSize: '0.82rem', letterSpacing: '1.5px',
-                    textTransform: 'uppercase', borderRadius: '2px', cursor: 'pointer',
+                  <button 
+                    onClick={() => alert('Thực đơn chi tiết đang được cập nhật!')}
+                    style={{
+                      background: 'transparent', border: '1px solid rgba(197,160,89,0.4)',
+                      color: '#C5A059', padding: '12px 28px',
+                      fontWeight: 600, fontSize: '0.82rem', letterSpacing: '1.5px',
+                      textTransform: 'uppercase', borderRadius: '2px', cursor: 'pointer',
                   }}>
                     Xem Menu
                   </button>
@@ -233,11 +238,13 @@ const DiningPage = () => {
             }}>
               <FaPhone style={{ marginRight: '8px' }} />Gọi Đặt Bàn
             </a>
-            <button style={{
-              background: 'transparent', border: '1px solid rgba(197,160,89,0.5)',
-              color: '#C5A059', padding: '14px 36px',
-              fontWeight: 600, fontSize: '0.85rem', letterSpacing: '1.5px',
-              textTransform: 'uppercase', borderRadius: '2px', cursor: 'pointer',
+            <button 
+              onClick={() => alert('Vui lòng liên hệ hotline để đặt tiệc riêng.')}
+              style={{
+                background: 'transparent', border: '1px solid rgba(197,160,89,0.5)',
+                color: '#C5A059', padding: '14px 36px',
+                fontWeight: 600, fontSize: '0.85rem', letterSpacing: '1.5px',
+                textTransform: 'uppercase', borderRadius: '2px', cursor: 'pointer',
             }}>
               <FaWineGlassAlt style={{ marginRight: '8px' }} />Đặt Tiệc Riêng
             </button>

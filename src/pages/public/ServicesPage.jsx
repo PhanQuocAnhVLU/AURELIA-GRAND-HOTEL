@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FaClock, FaPhone, FaStar, FaLeaf, FaDumbbell, FaSwimmingPool, FaSpa, FaCar } from 'react-icons/fa';
 import { MdSelfImprovement } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 
 const spaTreatments = [
   { name: 'Thư Giãn Toàn Thân', duration: '90 phút', price: '1.800.000₫', icon: '💆' },
@@ -53,6 +54,7 @@ const services = [
 
 const ServicesPage = () => {
   const [hovered, setHovered] = useState(null);
+  const navigate = useNavigate();
 
   return (
     <div style={{ background: '#0B1120', minHeight: '100vh', paddingBottom: '80px' }}>
@@ -139,13 +141,15 @@ const ServicesPage = () => {
                     <span style={{ color: '#C5A059', fontSize: '0.82rem' }}>
                       <FaClock style={{ marginRight: '6px' }} />{s.hours}
                     </span>
-                    <button style={{
-                      background: hovered === s.id ? 'linear-gradient(135deg, #C5A059, #A07840)' : 'transparent',
-                      border: '1px solid rgba(197,160,89,0.4)',
-                      color: hovered === s.id ? '#fff' : '#C5A059',
-                      padding: '8px 22px', borderRadius: '2px', cursor: 'pointer',
-                      fontSize: '0.78rem', letterSpacing: '1.5px', textTransform: 'uppercase',
-                      fontWeight: 600, transition: 'all 0.3s',
+                    <button 
+                      onClick={() => navigate('/login')}
+                      style={{
+                        background: hovered === s.id ? 'linear-gradient(135deg, #C5A059, #A07840)' : 'transparent',
+                        border: '1px solid rgba(197,160,89,0.4)',
+                        color: hovered === s.id ? '#fff' : '#C5A059',
+                        padding: '8px 22px', borderRadius: '2px', cursor: 'pointer',
+                        fontSize: '0.78rem', letterSpacing: '1.5px', textTransform: 'uppercase',
+                        fontWeight: 600, transition: 'all 0.3s',
                     }}>
                       Đặt Ngay
                     </button>
@@ -201,11 +205,13 @@ const ServicesPage = () => {
           </Row>
 
           <div className="text-center mt-5">
-            <button style={{
-              background: 'linear-gradient(135deg, #C5A059, #A07840)',
-              border: 'none', color: '#fff', padding: '14px 48px',
-              fontWeight: 700, fontSize: '0.88rem', letterSpacing: '2px',
-              textTransform: 'uppercase', borderRadius: '2px', cursor: 'pointer',
+            <button 
+              onClick={() => navigate('/login')}
+              style={{
+                background: 'linear-gradient(135deg, #C5A059, #A07840)',
+                border: 'none', color: '#fff', padding: '14px 48px',
+                fontWeight: 700, fontSize: '0.88rem', letterSpacing: '2px',
+                textTransform: 'uppercase', borderRadius: '2px', cursor: 'pointer',
             }}>
               <FaLeaf style={{ marginRight: '8px' }} />
               Đặt Liệu Trình Ngay

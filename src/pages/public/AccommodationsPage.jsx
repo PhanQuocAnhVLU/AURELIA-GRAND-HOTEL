@@ -233,7 +233,7 @@ const AccommodationsPage = () => {
                   {/* CTA */}
                   <div style={{ display: 'flex', gap: '12px' }}>
                     <Link
-                      to="/bookings"
+                      to="/login"
                       style={{
                         flex: 1, display: 'block', textAlign: 'center',
                         background: 'linear-gradient(135deg, #C5A059, #A07840)',
@@ -246,15 +246,17 @@ const AccommodationsPage = () => {
                     >
                       Đặt Phòng Ngay
                     </Link>
-                    <button style={{
-                      flex: 1, background: 'transparent',
-                      border: '1px solid rgba(197,160,89,0.4)',
-                      color: '#C5A059', padding: '12px 0',
-                      fontWeight: 600, fontSize: '0.85rem',
-                      letterSpacing: '1.5px', textTransform: 'uppercase',
-                      borderRadius: '2px', cursor: 'pointer',
-                      transition: 'all 0.3s',
-                    }}>
+                    <button 
+                      onClick={() => alert('Tính năng xem chi tiết phòng đang được cập nhật!')}
+                      style={{
+                        flex: 1, background: 'transparent',
+                        border: '1px solid rgba(197,160,89,0.4)',
+                        color: '#C5A059', padding: '12px 0',
+                        fontWeight: 600, fontSize: '0.85rem',
+                        letterSpacing: '1.5px', textTransform: 'uppercase',
+                        borderRadius: '2px', cursor: 'pointer',
+                        transition: 'all 0.3s',
+                      }}>
                       Xem Chi Tiết
                     </button>
                   </div>
