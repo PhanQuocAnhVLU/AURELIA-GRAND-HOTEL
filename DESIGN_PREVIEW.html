@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurelia Grand Hotel - Design Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #D4AF37;
+            --primary-dark: #B8860B;
+            --secondary-color: #1A1A1A;
+            --accent-color: #F5F5F5;
+            --bg-main: #FAFAF8;
+            --text-main: #2C2C2C;
+            --text-secondary: #555555;
+            --text-muted: #888888;
+            --shadow-lg: 0 16px 40px rgba(0,0,0,0.15);
+            --shadow-gold: 0 8px 24px rgba(212, 175, 55, 0.30);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--accent-color);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin: 4rem 0;
+        }
+
+        h2 {
+            font-family: 'Georgia', serif;
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .card p {
+            color: var(--text-secondary);
+        }
+
+        /* Button Styles */
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 0.85rem 2.2rem;
+            border-radius: 6px;
+            border: none;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.30);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-gold::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.4s;
+        }
+
+        .btn-gold:hover::before {
+            left: 100%;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-outline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+
+        .btn-outline:hover {
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .btn-outline:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-number {
+            font-family: 'Georgia', serif;
+            font-size: 3rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-label {
+            color: var(--text-secondary);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Code Block */
+        .code-block {
+            background: var(--secondary-color);
+            color: var(--accent-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        /* Color Palette */
+        .palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .color-box {
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .color-1 { background: var(--primary-color); color: var(--secondary-color); }
+        .color-2 { background: var(--secondary-color); }
+        .color-3 { background: var(--accent-color); color: var(--text-main); }
+        .color-4 { background: var(--text-main); }
+
+        .color-label {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .card:nth-child(2) { animation-delay: 0.1s; }
+        .card:nth-child(3) { animation-delay: 0.2s; }
+        .card:nth-child(4) { animation-delay: 0.3s; }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: var(--accent-color);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .button-group { flex-direction: column; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>✨ Aurelia Grand Hotel</h1>
+        <p class="subtitle">Thiết Kế Web 5 Sao Sang Trọng - Design Preview</p>
+    </header>
+
+    <div class="container">
+        <!-- Color Palette Section -->
+        <section>
+            <h2>🎨 Bảng Màu Mới - Premium Luxury Palette</h2>
+            <div class="palette">
+                <div class="color-box color-1">
+                    Vàng Đích Thực
+                    <div class="color-label">#D4AF37</div>
+                </div>
+                <div class="color-box color-2">
+                    Đen Tinh Khiết
+                    <div class="color-label">#1A1A1A</div>
+                </div>
+                <div class="color-box color-3">
+                    Trắng Bạch Kim
+                    <div class="color-label">#F5F5F5</div>
+                </div>
+                <div class="color-box color-4">
+                    Text Chính
+                    <div class="color-label">#2C2C2C</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buttons Section -->
+        <section>
+            <h2>🔘 Button Styles Mới</h2>
+            <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+                Buttons với <span class="highlight">shine effect</span>, gradient backgrounds, và hover animations.
+            </p>
+            <div class="button-group">
+                <button class="btn btn-gold">Đặt Phòng Ngay</button>
+                <button class="btn btn-outline">Tìm Hiểu Thêm</button>
+                <button class="btn btn-gold">Liên Hệ</button>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section>
+            <h2>⭐ Features Chính</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-number">10+</div>
+                    <div class="feature-label">Animations Mới</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">100%</div>
+                    <div class="feature-label">Responsive Design</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">6</div>
+                    <div class="feature-label">Shadow Levels</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">2</div>
+                    <div class="feature-label">Themes (Light/Dark)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards Section -->
+        <section>
+            <h2>📦 Card Components - Hover để thấy hiệu ứng</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">🏨</div>
+                    <h3>Sang Trọng</h3>
+                    <p>Trải nghiệm sang trọng của một khách sạn 5 sao thực thụ với mọi tiện nghi hạng nhất.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌟</div>
+                    <h3>Modern Design</h3>
+                    <p>Thiết kế hiện đại với typography serif, animations mịn, và visual hierarchy rõ ràng.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">✨</div>
+                    <h3>Animations</h3>
+                    <p>10+ animations mới bao gồm fadeIn, slideInUp, goldGlow, bounce, và nhiều hơn nữa.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌙</div>
+                    <h3>Dark Theme</h3>
+                    <p>Tương thích 100% với chế độ tối. Màu sắc điều chỉnh tự động với data-theme attribute.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Section -->
+        <section>
+            <h2>💻 Cách Sử Dụng</h2>
+            
+            <h3 style="margin: 2rem 0 1rem; color: var(--text-main);">1. Animations</h3>
+            <div class="code-block">
+&lt;div class="animate-fadeIn"&gt;Fade in element&lt;/div&gt;
+&lt;div class="hover-lift"&gt;Card nâng lên khi hover&lt;/div&gt;
+&lt;button class="animate-goldGlow"&gt;Gold glow button&lt;/button&gt;
+            </div>
+
+            <h3 style="margin: 2rem 0 1rem; color: var(--text-main);">2. Feature Cards</h3>
+            <div class="code-block">
+&lt;div class="feature-card"&gt;
+  &lt;div class="feature-icon"&gt;🏨&lt;/div&gt;
+  &lt;h3 class="feature-title"&gt;Tiêu Đề&lt;/h3&gt;
+  &lt;p class="feature-desc"&gt;Mô tả&lt;/p&gt;
+&lt;/div&gt;
+            </div>
+
+            <h3 style="margin: 2rem 0 1rem; color: var(--text-main);">3. Buttons</h3>
+            <div class="code-block">
+&lt;button class="btn-gold"&gt;Nút Vàng&lt;/button&gt;
+&lt;button class="btn-outline-gold"&gt;Nút Outline&lt;/button&gt;
+            </div>
+
+            <h3 style="margin: 2rem 0 1rem; color: var(--text-main);">4. Dark Theme</h3>
+            <div class="code-block">
+&lt;html data-theme="dark"&gt;
+  &lt;!-- Mọi thứ tự động chuyển sang dark mode --&gt;
+&lt;/html&gt;
+            </div>
+        </section>
+
+        <!-- Files Changed -->
+        <section>
+            <h2>📁 Files Được Cập Nhật/Tạo Mới</h2>
+            <div class="card" style="border-top: 4px solid #10B981;">
+                <h3 style="color: #10B981;">✅ Cập Nhật</h3>
+                <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                    <li><code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">src/styles/variables.css</code> - Biến CSS mới (màu, font, shadow)</li>
+                    <li><code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">src/styles/components.css</code> - Buttons, cards, forms (3x lớn hơn!)</li>
+                    <li><code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">src/App.jsx</code> - Import CSS files mới</li>
+                </ul>
+            </div>
+            <div class="card" style="border-top: 4px solid #0EA5E9; margin-top: 1rem;">
+                <h3 style="color: #0EA5E9;">✨ Tạo Mới</h3>
+                <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                    <li><code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">src/styles/animations.css</code> - 10+ animations, effects</li>
+                    <li><code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">src/styles/layout.css</code> - Luxury layouts, hero, CTA sections</li>
+                    <li><code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">DESIGN_UPGRADE.md</code> - Hướng dẫn chi tiết</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Next Steps -->
+        <section>
+            <h2>🚀 Tiếp Theo</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>1. Cài Đặt</h3>
+                    <p>Chạy <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">npm install</code> để cài dependencies</p>
+                </div>
+                <div class="card">
+                    <h3>2. Chạy Dev Server</h3>
+                    <p>Chạy <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">npm run dev</code> để xem kết quả</p>
+                </div>
+                <div class="card">
+                    <h3>3. Customize</h3>
+                    <p>Chỉnh sửa <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">variables.css</code> cho màu sắc của bạn</p>
+                </div>
+                <div class="card">
+                    <h3>4. Deploy</h3>
+                    <p>Chạy <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">npm run build</code> cho production</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>🌟 <span class="highlight">Aurelia Grand Hotel</span> - Nâng Cấp Thiết Kế 5 Sao 🌟</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+            Design Upgrade - 27 Tháng 6, 2026 | Created with ❤️
+        </p>
+    </footer>
+</body>
+</html>

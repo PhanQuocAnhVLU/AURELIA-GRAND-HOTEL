@@ -1,0 +1,67 @@
+:root {
+  /* Colors - Premium 5-Star Luxury Palette */
+  --primary-color: #D4AF37;      /* Rich Gold */
+  --primary-dark: #B8860B;       /* Dark Goldenrod */
+  --primary-light: #F4E4C1;      /* Light Gold Accent */
+  --secondary-color: #1A1A1A;    /* Pure Black */
+  --accent-color: #F5F5F5;       /* Platinum White */
+  
+  /* Backgrounds */
+  --bg-main: #FAFAF8;            /* Warm Ivory */
+  --bg-card: #FFFFFF;
+  --bg-alt: #F8F6F2;
+  --bg-dark: #0D0D0D;
+  --bg-dark-card: #1F1F1F;
+  
+  /* Text */
+  --text-main: #2C2C2C;          /* Deep Charcoal */
+  --text-secondary: #555555;     /* Medium Gray */
+  --text-muted: #888888;         /* Light Gray */
+  --text-light: #FAFAFA;
+  
+  /* Status Colors (Sophisticated) */
+  --success: #2D7A4A;
+  --warning: #C4A000;
+  --danger: #B83C3C;
+  --info: #4A90A4;
+  
+  /* Layout */
+  --sidebar-width: 280px;
+  --navbar-height: 80px;
+  
+  /* Shadows & Radius (Premium elegance) */
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.10);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.18);
+  --shadow-gold: 0 8px 24px rgba(212, 175, 55, 0.30);
+  
+  --radius-xs: 2px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-normal: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-slow: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  --font-mono: 'Monaco', 'Courier New', monospace;
+  
+  --letter-spacing-tight: -0.3px;
+  --letter-spacing-normal: 0px;
+  --letter-spacing-wide: 1.2px;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+  --bg-main: var(--bg-dark);
+  --bg-card: var(--bg-dark-card);
+  --text-main: var(--text-light);
+  --text-muted: #adb5bd;
+}

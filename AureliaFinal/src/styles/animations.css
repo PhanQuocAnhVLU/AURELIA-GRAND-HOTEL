@@ -1,0 +1,366 @@
+/* ====================================
+   PREMIUM ANIMATIONS & EFFECTS
+   ==================================== */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Elegant Slide In */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale Animation for Cards */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Shimmer Loading Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Gold Glow Animation */
+@keyframes goldGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  }
+}
+
+/* Pulse for Important Elements */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Float Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Rotate Animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ====================================
+   UTILITY ANIMATION CLASSES
+   ==================================== */
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.8s ease-out;
+}
+
+.animate-slideInDown {
+  animation: slideInDown 0.8s ease-out;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.6s ease-out;
+}
+
+.animate-goldGlow {
+  animation: goldGlow 2.5s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1.2s ease-in-out;
+}
+
+/* ====================================
+   SCROLL ANIMATIONS
+   ==================================== */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ====================================
+   HOVER EFFECTS
+   ==================================== */
+
+/* Elegant Hover Lift */
+.hover-lift {
+  transition: all var(--transition-normal);
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Text Hover Effect */
+.text-hover-gold {
+  position: relative;
+  color: var(--text-main);
+  transition: color var(--transition-fast);
+}
+
+.text-hover-gold::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width var(--transition-normal);
+}
+
+.text-hover-gold:hover {
+  color: var(--primary-color);
+}
+
+.text-hover-gold:hover::after {
+  width: 100%;
+}
+
+/* ====================================
+   TRANSITIONS
+   ==================================== */
+
+.transition-fast {
+  transition: all var(--transition-fast);
+}
+
+.transition-normal {
+  transition: all var(--transition-normal);
+}
+
+.transition-slow {
+  transition: all var(--transition-slow);
+}
+
+/* ====================================
+   SPECIAL EFFECTS
+   ==================================== */
+
+/* Gold Accent Line */
+.gold-line {
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--primary-color) 25%, 
+    var(--primary-color) 75%, 
+    transparent 100%);
+  margin: 2rem 0;
+}
+
+/* Premium Separator */
+.premium-divider {
+  position: relative;
+  height: 1px;
+  background: rgba(212, 175, 55, 0.2);
+  margin: 3rem 0;
+}
+
+.premium-divider::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background: var(--bg-main);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 50%;
+}
+
+.premium-divider::after {
+  content: '✦';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+/* Spotlight Effect */
+.spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+  animation: spotlight 6s ease-in-out infinite;
+}
+
+@keyframes spotlight {
+  0%, 100% {
+    top: -50%;
+    right: -50%;
+  }
+  50% {
+    top: -30%;
+    right: -30%;
+  }
+}
+
+/* Glass Morphism (subtle) */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(13, 13, 13, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ====================================
+   LOADING STATES
+   ==================================== */
+
+.loading-skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+[data-theme="dark"] .loading-skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.08) 25%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.08) 75%
+  );
+  background-size: 200% 100%;
+}
+
+/* ====================================
+   TEXT EFFECTS
+   ==================================== */
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Letter Spacing Animation */
+.text-spaced {
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* Serif Elegance */
+.serif-elegant {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: 1.2;
+}
